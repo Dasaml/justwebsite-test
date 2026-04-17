@@ -616,7 +616,7 @@ section {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
 }
 .stats-title {
     font-size: 2rem;
@@ -637,17 +637,17 @@ section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 .circle-container {
     position: relative;
@@ -664,12 +664,12 @@ section {
 }
 .stat-number {
     position: absolute;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 .progress-ring {
-    width: 175px;
-    height: 175px;
+    width: 90px;
+    height: 90px;
 }
 .progress-ring .circle-bar {
     -webkit-transition: stroke-dashoffset 1.5s ease-in-out;
@@ -686,12 +686,13 @@ section {
 }
 .stat-item {
     text-align: center;
+    width: 30%;
 }
 .stat-label {
     font-size: 1rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: .5px;
+    line-height: 1.4;
 }
 .portfolio-gallery {
     background-image: url("../img/section-bg-6-1-69d8b41144e08.webp");
@@ -1580,6 +1581,14 @@ section {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        gap: 20px;
+    }
+    .progress-ring {
+        width: 175px;
+        height: 175px;
+    }
+    .stat-number {
+        font-size: 1.8rem;
     }
     .gallery-title {
         font-size: 2.5rem;
@@ -1806,6 +1815,7 @@ section {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        gap: 60px;
     }
     .stats-content,
     .stats-grid {
