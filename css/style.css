@@ -72,9 +72,15 @@ img, svg {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 .logo img {
     max-width: 150px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+.logo, .logo:focus, .logo:active {
+    outline: none;
+    border: none;
 }
 .nav-menu {
     position: fixed;
