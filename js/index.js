@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 contactForm.style.opacity = '0.7';
 
-                fetch('php/send-mail.php', {
+                fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 })
