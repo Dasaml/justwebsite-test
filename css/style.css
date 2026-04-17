@@ -681,8 +681,6 @@ section {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    stroke-dasharray: 502.6;
-    stroke-dashoffset: 502.6;
 }
 .stat-item {
     text-align: center;
