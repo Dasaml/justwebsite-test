@@ -37,30 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. CIRCLE PROGRESS ANIMACE (Zjednodušený selektor) ---
-    const progressCircles = document.querySelectorAll('.progress-ring .circle-bar');
-
-    if (progressCircles.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const circle = entry.target;
-                    const percent = circle.getAttribute('data-percent');
-                    const circumference = 502.6; // Pro r=80
-                    const offset = circumference - (percent / 100 * circumference);
-
-                    // Malá pauza pro Safari
-                    setTimeout(() => {
-                        circle.style.strokeDashoffset = offset;
-                    }, 150);
-
-                    observer.unobserve(circle);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        progressCircles.forEach(c => observer.observe(c));
-    }
+    // --- 3. CIRCLE PROGRESS ANIMACE (ODSTRANĚNO - ŘEŠENO STATICKY V HTML/CSS) ---
 
     // --- 4. TESTIMONIALS SLIDER ---
     const track = document.querySelector('.testimonials-track');
@@ -85,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            // Pokud je to odkaz na tab v ceníku, smooth scroll ignorujeme (dělá to neplechu)
             if (this.classList.contains('kt-tab-title') || this.classList.contains('tab-btn')) return;
 
             if (href !== '#' && href.length > 1) {
@@ -194,11 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tabPane = document.getElementById(tabId);
                 
                 if (tabPane) {
-                    // Deaktivuj všechny buttony a panely
                     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                     document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
                     
-                    // Aktivuj kliknutý
                     button.classList.add('active');
                     tabPane.classList.add('active');
                 }
@@ -206,4 +180,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-}); // Konec DOMContentLoaded
+});
