@@ -37,40 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. CIRCLE PROGRESS ANIMACE (Směr z 0 do 100) ---
-    const circles = document.querySelectorAll('.progress-ring__circle');
-    if (circles.length > 0) {
-        // Nejdříve všem kolečkům nastavíme "prázdný" stav okamžitě
-        circles.forEach(circle => {
-            const r = circle.getAttribute('r');
-            const circumference = 2 * Math.PI * r;
-            circle.style.strokeDasharray = `${circumference} ${circumference}`;
-            circle.style.strokeDashoffset = circumference;
-        });
+    // --- 3. CIRCLE PROGRESS ANIMACE (Zjednodušený selektor) ---
+    const progressCircles = document.querySelectorAll('.progress-ring .circle-bar');
 
-        const circleObserver = new IntersectionObserver((entries, observer) => {
+    if (progressCircles.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const circle = entry.target;
-                    const r = circle.getAttribute('r');
-                    const circumference = 2 * Math.PI * r;
                     const percent = circle.getAttribute('data-percent');
-
-                    // Výpočet cílového offsetu (kolik má zbýt barevné čáry)
+                    const circumference = 502.6; // Pro r=80
                     const offset = circumference - (percent / 100 * circumference);
 
-                    // Animace směrem k cíli
+                    // Malá pauza pro Safari
                     setTimeout(() => {
-                        circle.style.transition = 'stroke-dashoffset 1.5s ease-in-out';
                         circle.style.strokeDashoffset = offset;
-                    }, 200);
+                    }, 150);
 
                     observer.unobserve(circle);
                 }
             });
         }, { threshold: 0.1 });
 
-        circles.forEach(circle => circleObserver.observe(circle));
+        progressCircles.forEach(c => observer.observe(c));
     }
 
     // --- 4. TESTIMONIALS SLIDER ---
