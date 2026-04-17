@@ -672,8 +672,14 @@ section {
     height: 175px;
 }
 .progress-ring__circle {
+    -webkit-transition: stroke-dashoffset 1.5s ease-in-out;
+    -o-transition: stroke-dashoffset 1.5s ease-in-out;
     transition: stroke-dashoffset 1.5s ease-in-out;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     stroke-dasharray: 502.6;
     stroke-dashoffset: 502.6;
