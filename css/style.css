@@ -154,7 +154,7 @@ section {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 20px 20px;
+    padding: 25px 20px;
 }
 .hero-content {
     max-width: 600px;
@@ -163,7 +163,7 @@ section {
     text-align: left;
     font-size: 2.5rem;
     line-height: 1.1;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-weight: 300;
 }
 .hero-content .h1-span {
@@ -252,7 +252,7 @@ section {
 .phone-section .section-text.small {
     font-size: 1.1rem;
     line-height: 1.6;
-    padding: 0 0 1em;
+    padding: 0 0 .1em;
 }
 
 .phone-container {
@@ -327,7 +327,7 @@ section {
     margin-bottom: 20px;
     font-weight: 500;
     max-width: 1100px;
-    padding: 0;
+    padding: 30px 0 0;
 }
 .features-grid {
     display: -webkit-box;
@@ -425,7 +425,7 @@ section {
     gap: 50px;
 }
 .accordion {
-    min-height: 480px;
+    min-height: 100%;
     max-width: 800px;
     margin: 20px auto 0;
 }
@@ -1515,9 +1515,13 @@ section {
     }
     .hero-content h1 {
         font-size: 5rem;
+        margin-bottom: 40px;
     }
     .hero-container {
         padding: 50px 20px;
+    }
+    .phone-section .section-text.small {
+        padding: 0 0 1em;
     }
     .phone-container {
         -webkit-box-align: start;-ms-flex-align: start;align-items: flex-start;
@@ -1536,6 +1540,7 @@ section {
     .features .features-title {
         font-size: 2.5rem;
         margin-bottom: 30px;
+        padding: 0;
     }
     .feature-card {
         display: -webkit-box;
