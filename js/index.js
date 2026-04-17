@@ -37,44 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. CIRCLE PROGRESS ANIMACE (Opraveno pro mobil) ---
+    // --- 3. CIRCLE PROGRESS ANIMACE (Směr z 0 do 100) ---
     const circles = document.querySelectorAll('.progress-ring__circle');
     if (circles.length > 0) {
-        const animateCircles = (entries, observer) => {
+        // Nejdříve všem kolečkům nastavíme "prázdný" stav okamžitě
+        circles.forEach(circle => {
+            const r = circle.getAttribute('r');
+            const circumference = 2 * Math.PI * r;
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = circumference;
+        });
+
+        const circleObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const circle = entry.target;
-                    
-                    // U mobilů je lepší brát poloměr přímo z atributu, pokud baseVal zlobí
-                    const radius = circle.getAttribute('r');
-                    const circumference = 2 * Math.PI * radius;
-                    const percent = circle.dataset.percent;
+                    const r = circle.getAttribute('r');
+                    const circumference = 2 * Math.PI * r;
+                    const percent = circle.getAttribute('data-percent');
 
-                    // Nastavení počátečního stavu (prázdné)
-                    circle.style.strokeDasharray = `${circumference} ${circumference}`;
-                    circle.style.strokeDashoffset = circumference;
+                    // Výpočet cílového offsetu (kolik má zbýt barevné čáry)
+                    const offset = circumference - (percent / 100 * circumference);
 
-                    // Malý trik: Vynutíme překreslení (reflow)
-                    circle.getBoundingClientRect();
-
-                    // Samotná animace s mírným zpožděním
+                    // Animace směrem k cíli
                     setTimeout(() => {
-                        const offset = circumference - (percent / 100 * circumference);
-                        circle.style.transition = 'stroke-dashoffset 1.5s ease-in-out'; // Plynulost
+                        circle.style.transition = 'stroke-dashoffset 1.5s ease-in-out';
                         circle.style.strokeDashoffset = offset;
-                    }, 50);
+                    }, 200);
 
                     observer.unobserve(circle);
                 }
             });
-        };
+        }, { threshold: 0.1 });
 
-        // Změna threshold na 0.1 pro lepší citlivost na mobilech
-        const circleObserver = new IntersectionObserver(animateCircles, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px' // Spustí se o kousek dřív, než k tomu uživatel doscrolluje
-        });
-        
         circles.forEach(circle => circleObserver.observe(circle));
     }
 
