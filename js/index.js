@@ -37,31 +37,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. CIRCLE PROGRESS ANIMACE ---
+    // --- 3. CIRCLE PROGRESS ANIMACE (Opraveno pro mobil) ---
     const circles = document.querySelectorAll('.progress-ring__circle');
     if (circles.length > 0) {
         const animateCircles = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const circle = entry.target;
-                    const radius = circle.r.baseVal.value;
+                    
+                    // U mobilů je lepší brát poloměr přímo z atributu, pokud baseVal zlobí
+                    const radius = circle.getAttribute('r');
                     const circumference = 2 * Math.PI * radius;
                     const percent = circle.dataset.percent;
 
+                    // Nastavení počátečního stavu (prázdné)
                     circle.style.strokeDasharray = `${circumference} ${circumference}`;
                     circle.style.strokeDashoffset = circumference;
 
+                    // Malý trik: Vynutíme překreslení (reflow)
+                    circle.getBoundingClientRect();
+
+                    // Samotná animace s mírným zpožděním
                     setTimeout(() => {
                         const offset = circumference - (percent / 100 * circumference);
+                        circle.style.transition = 'stroke-dashoffset 1.5s ease-in-out'; // Plynulost
                         circle.style.strokeDashoffset = offset;
-                    }, 100);
+                    }, 50);
 
                     observer.unobserve(circle);
                 }
             });
         };
 
-        const circleObserver = new IntersectionObserver(animateCircles, { threshold: 0.5 });
+        // Změna threshold na 0.1 pro lepší citlivost na mobilech
+        const circleObserver = new IntersectionObserver(animateCircles, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px' // Spustí se o kousek dřív, než k tomu uživatel doscrolluje
+        });
+        
         circles.forEach(circle => circleObserver.observe(circle));
     }
 
@@ -132,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = true;
                 contactForm.style.opacity = '0.7';
 
-                fetch('https://api.web3forms.com/submit', {
+                fetch('php/send-mail.php', {
                     method: 'POST',
                     body: formData
                 })
