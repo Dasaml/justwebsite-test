@@ -304,7 +304,7 @@ section {
     background-position: right;
     background-attachment: scroll;
     background-repeat: no-repeat;
-    padding: 0;
+    padding: 0 0 1em;
     overflow: hidden;
 }
 .features .feature-inner {
@@ -1732,6 +1732,9 @@ section {
     }
     .feature-tablet-image {
         display: block;
+    }
+    .features {
+        padding: 0;
     }
     .contact {
         padding: 90px 0;
