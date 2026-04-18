@@ -867,7 +867,7 @@ section {
     background-attachment: scroll;
     background-repeat: no-repeat;
     padding: 0;
-    margin: 0 0 3em;
+    padding: 0 0 3em;
     overflow: hidden;
 }
 .contact-container {
@@ -1737,7 +1737,7 @@ section {
         padding: 0;
     }
     .contact {
-        padding: 90px 0;
+        padding: 90px 120px;
     }
     .contact-container {
         display: -webkit-box;
