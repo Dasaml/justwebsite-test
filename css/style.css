@@ -440,7 +440,7 @@ section {
 }
 .accordion-header {
     width: 100%;
-    padding: 15px;
+    padding: 25px 15px;
     background: #fff;
     border: none;
     display: -webkit-box;
