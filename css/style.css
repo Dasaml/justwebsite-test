@@ -92,7 +92,7 @@ img, svg {
     height: 100vh;
     justify-content: center;
     gap: 40px;
-    transition: 0.4s ease-in-out;
+    transition: 0.2s ease-in-out;
     list-style: none;
 }
 
@@ -101,12 +101,12 @@ img, svg {
     left: 0;
 }
 .nav-menu.active li {
-    padding: 0 0 10px;
+    padding: 0 0 15px;
 }
 .nav-menu a {
     text-decoration: none;
     color: #242529;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 300;
     text-transform: uppercase;
 }
