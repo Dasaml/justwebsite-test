@@ -9,9 +9,6 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta name="description" content="Tvorba webových stránek nejnovějšího designu, ale zároveň s prvotřídním výkonem a optimalizací pro vyhledávače.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <meta property="og:title" content="JustWebsite - Tvorba webových stránek">
     <meta property="og:description" content="Tvorba webových stránek nejnovějšího designu, ale zároveň s prvotřídním výkonem a optimalizací pro vyhledávače.">
     <meta property="og:image" content="https://www.justwebsite.cz/img/og-img-69e3422df3e94.webp">
@@ -19,14 +16,48 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.justwebsite.cz/">
     <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap">
-    </noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-       <style>
+    <style>
+        @font-face {
+              font-display: swap;
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 200;
+              src: url('fonts/montserrat-v31-latin-200.woff2') format('woff2');
+            }
+
+            @font-face {
+              font-display: swap;
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 300;
+              src: url('/fonts/montserrat-v31-latin-300.woff2') format('woff2');
+            }
+
+            @font-face {
+              font-display: swap;
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              src: url('/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+            }
+
+            @font-face {
+              font-display: swap;
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 500;
+              src: url('/fonts/montserrat-v31-latin-500.woff2') format('woff2');
+            }
+
+            @font-face {
+              font-display: swap;
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 600;
+              src: url('/fonts/montserrat-v31-latin-600.woff2') format('woff2');
+            }
         * {
             margin: 0;
             padding: 0;
@@ -40,12 +71,16 @@
 
         body {
             font-family: "Montserrat", sans-serif;
+            font-weight: 300;
             color: #242529;
             font-size: 16px;
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
             -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         /* Globální opravy prvků */
@@ -194,11 +229,12 @@
             max-width: 600px;
         }
         .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
             text-align: left;
             font-size: 2.5rem;
             line-height: 1.1;
             margin-bottom: 50px;
-            font-weight: 300;
+            font-weight: 200;
         }
         .hero-content .h1-span {
             font-weight: 600;
@@ -213,7 +249,7 @@
             font-size: 1rem;
             line-height: 1.3;
             letter-spacing: 6px;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 30px;
         }
         .hero-buttons {
@@ -247,7 +283,7 @@
             border: 1px solid #7d84e3;
             font-size: 1rem;
             line-height: 1.6;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             text-align: center;
             font-weight: 300;
@@ -387,7 +423,7 @@
         }
         .feature-card p {
             font-size: 1rem;
-            line-height: 1.4;
+            line-height: 1.6;
             font-style: normal;
             font-weight: 300;
             max-width: 600px;
@@ -483,7 +519,7 @@
             cursor: pointer;
             color: #6A77BB;
             font-size: 1.1rem;
-            font-weight: 500;
+            font-weight: 600;
             line-height: 1.4;
             text-transform: uppercase;
             letter-spacing: .5px;
@@ -520,6 +556,7 @@
             padding: 0;
         }
         .accordion-content p {
+            font-weight: 400;
             padding: 0 20px 20px 20px;
             color: #4a4a4a;
             line-height: 1.6;
@@ -1227,312 +1264,6 @@
             width: 100%;
             background: -o-linear-gradient(315deg, rgb(130, 144, 229) 0%, rgb(166, 225, 216) 100%);background: linear-gradient(135deg, rgb(130, 144, 229) 0%, rgb(166, 225, 216) 100%);
         }
-        .faq-title-row {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-            width: 100%;
-        }
-        .faq-title-column {
-            width: 100%;
-            text-align: center;
-        }
-        .faq-main-title {
-            color: #ffffff; 
-            font-size: 2rem;
-            font-weight: 300;
-            line-height: 1.2;
-            margin: 0;
-            text-transform: none;
-        }
-        .faq-section {
-            padding: 50px 0;
-            background-color: #ffffff;
-        }
-        .faq-section .accordion {
-            min-height: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .faq-section .accordion-item {
-            background: #fff;
-            border: none;
-        }
-        .faq-section .accordion-header {
-            font-size: 1.2rem;
-            font-weight: 400;
-            font-family: 'Montserrat';
-            border-top: 1px solid rgb(36 37 41 / 20%);
-            border-bottom: 1px solid rgb(36 37 41 / 20%);
-            border-left: 1px solid rgb(36 37 41 / 20%);
-            border-right: 1px solid rgb(36 37 41 / 20%);
-            border-radius: 6px;
-            background: #fff;
-            padding: 15px; 
-            margin: 0 0 10px;
-            color: #202020; 
-            width: 100%;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            cursor: pointer;
-            text-transform: none; 
-            letter-spacing: 0;
-        }
-        .faq-section .accordion-item.active .accordion-header {
-            color: #fff;
-            background-color: #7d84e3;
-        }
-        .faq-section .accordion-item.active .accordion-header .fas.fa-chevron-down {
-            color: #fff;
-        }
-        .faq-section .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
-        }
-        .faq-section .accordion-item.active .accordion-content {
-            max-height: 100%;
-        }
-        .faq-section .accordion-item.active .accordion-content a {
-            color: #879ae4;
-        }
-        .faq-section .accordion-content p {
-            font-size: 1.1rem;
-            padding: 0 15px 30px 15px;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #202020;
-            min-height: 1px;
-        }
-        .faq-list {
-            padding: 0 2em 1em;
-        }
-        .faq-list li {
-            padding: 0 0 5px;
-        }
-        .pricing-section { padding: 80px 0; background: #fff; }
-        .pricing-tabs { margin-bottom: 50px; }
-        .tabs-header { 
-            display: -webkit-box; 
-            display: -ms-flexbox; 
-            display: flex; 
-            -webkit-box-pack: center; 
-            -ms-flex-pack: center; 
-            justify-content: center; 
-            gap: 10px; 
-            margin-bottom: 0; 
-            -ms-flex-wrap: wrap; 
-            flex-wrap: wrap;
-        }
-        .tab-btn {
-            font-family: Montserrat;
-            font-size: 1.1rem;
-            font-weight: 400;
-            letter-spacing: .2px;
-            text-transform: uppercase;
-            padding: 12px 24px;
-            border: 2px solid #eee;
-            background: none;
-            cursor: pointer;
-            transition: 0.3s;
-            border-radius: 5px 5px 0 0;
-        }
-        .tab-btn.active, .tab-btn:hover {
-            border-color: #7d84e3;
-            background-color: #7d84e3;
-            color: #ffffff;
-        }
-        .tabs-content h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            line-height: 1.6;
-            font-family: 'Montserrat';
-        }
-        .tab-pane { display: none; animation: fadeIn 0.5s; }
-        .tab-pane.active { 
-            display: block; 
-        }
-        .pricing-tabs .tabs-content {
-            border: 1px solid #7e84e3;
-            border-radius: 8px;
-            padding: 1em;
-        }
-        .price-list,
-        .price-list-desktop { 
-            list-style: none; 
-            padding: 0; 
-            margin: 20px 0; 
-        }
-        .price-list li {
-            margin-bottom: 15px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 1rem;
-            font-weight: 300;
-            font-family: 'Montserrat';
-        }
-        .price-list i,
-        .price-list-desktop i { 
-            color: #28a745; 
-            margin-top: 4px; 
-        }
-        .pricing-tabs .tabs-content .info-text {
-            font-size: 1rem;
-            font-style: italic;
-        }
-        .price-tag { 
-            font-family: 'Montserrat';
-            font-size: 1rem;
-            font-weight: 400;
-            color: #242529;
-            margin-top: 25px; 
-        }
-        .pricing-tabs .tabs-content p,
-        .price-list-desktop li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-        .pricing-mobile-grid {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .mobile-price-box {
-            background: #ffffff;
-            border: 2px solid #7d84e3;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 0 0 1em;
-            -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.05);box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .mobile-price-box h2 {
-            font-size: 1.3rem;
-            color: #242529;
-            margin-bottom: 10px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .mobile-price-box p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #242529;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .mobile-price-box .info-text {
-            font-size: 1rem;
-            font-style: italic;
-        }
-        .mobile-price-box.highlight {
-            border: 2px solid #7d84e3;
-            background: #f8fbff;
-        }
-        .pricing-footer { 
-            background: #f9f9f9; 
-            padding: 20px; 
-            border-radius: 10px; 
-        }
-        .pricing-footer h4 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.6;
-            padding: 0 0 15px;
-        }
-        .pricing-footer p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-        .footer-grid { 
-            display: -ms-grid; 
-            display: grid; 
-            -ms-grid-columns: 1fr; 
-            grid-template-columns: 1fr; 
-            gap: 20px; 
-        }
-        .divider { 
-            margin: 50px 0 30px; 
-            border: 0; 
-            border-top: 1px solid #ddd; 
-        }
-        .pricing-footer .disclaimer { 
-            font-size: 0.9rem; 
-            color: #777; 
-            line-height: 1.6; 
-        }
-        @keyframes fadeIn { 
-            from { opacity: 0; } to { opacity: 1; } 
-        }
-        .show-on-mobile { display: block; }
-        .hide-on-mobile {display: none;}
-
-        .privacy-policy {
-            background-color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            color: #242529;
-            line-height: 1.6;
-        }
-        .policy-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 15px 50px;
-        }
-        .policy-section {
-            margin-bottom: 35px;
-        }
-        .privacy-policy h2 {
-            color: #242529;
-            font-size: 1.4rem;
-            font-weight: 300;
-            line-height: 1.2;
-            padding: 0 0 15px;
-            margin: 0;
-            text-transform: none;
-        }
-        .privacy-policy p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            margin-bottom: 15px;
-        }
-        .privacy-policy ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .privacy-policy li {
-            font-size: 1.1rem;
-            font-weight: 300;
-            margin-bottom: 8px;
-        }
-        .privacy-policy strong {
-            font-weight: 500;
-        }
-
 
         /* --- RESPONZIVITA --- */
 
@@ -1669,20 +1400,6 @@
                 -ms-flex-direction: row;
                 flex-direction: row;
             }
-            .faq-section {
-                padding: 100px 0;
-            }
-            .faq-section .accordion {
-                min-height: 900px;
-            }
-            .faq-section .accordion-header {
-                font-size: 1.2rem;
-                font-weight: 300;
-                font-family: 'Montserrat';
-            }
-            .pricing-tabs .tabs-content {
-                padding: 2em;
-            }
             .footer-grid { 
                 -ms-grid-columns: 1fr 1fr; 
                 grid-template-columns: 1fr 1fr; 
@@ -1815,9 +1532,6 @@
             }
             .footer-section {
                 width: 30%;
-            }
-            .policy-container {
-                padding: 80px 0 50px;
             }
         }
 
