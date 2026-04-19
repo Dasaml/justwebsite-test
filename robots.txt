@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.justwebsite.cz/sitemap.xml
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
